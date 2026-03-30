@@ -25,10 +25,8 @@
 enum{ Xcoord=0, Ycoord, Zcoord, Ndim };
       
 DEF double *pos[Ndim], *velo[Ndim];
-DEF double *f[Ndim], *vis, *mass, *radius;
-DEF double *delta_pos[3];
+DEF double *f[Ndim], *vis, *mass, *radius, *inv_mass, *Gm;
 DEF double *r;
-DEF double *delta_r;
 DEF double wind[Ndim];
 DEF int collisions;
 
@@ -36,3 +34,6 @@ DEF int collisions;
 #define M_central 1000.0
 
 void evolve(int Nstep, double dt);
+void vis_forces(int N, double *f, double *vis, double *velo);
+void wind_forces(int N, double *f, double *vis, double velo);
+void compute_forces(double dt);
