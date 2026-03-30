@@ -31,20 +31,20 @@ int main(int argc, char *argv[]){
   wind[Ycoord] = 0.4;
   wind[Zcoord] = 0.0;
   /* set up multi dimensional arrays */
-r = calloc(Nbody,sizeof(double));
-mass = calloc(Nbody,sizeof(double));
-radius = calloc(Nbody,sizeof(double));
-vis = calloc(Nbody,sizeof(double));
-inv_mass = calloc(Nbody,sizeof(double));
-Gm = calloc(Nbody,sizeof(double));
-f[0] = calloc(Ndim*Nbody,sizeof(double));
-pos[0] = calloc(Ndim*Nbody,sizeof(double));
-velo[0] = calloc(Ndim*Nbody,sizeof(double));
-for(i=1;i<Ndim;i++){
-  f[i] = f[0] + i * Nbody;
-  pos[i] = pos[0] + i * Nbody;
-  velo[i] = velo[0] + i * Nbody;
-}
+  r = calloc(Nbody,sizeof(double));
+  mass = calloc(Nbody,sizeof(double));
+  radius = calloc(Nbody,sizeof(double));
+  vis = calloc(Nbody,sizeof(double));
+  inv_mass = calloc(Nbody,sizeof(double));
+  Gm = calloc(Nbody,sizeof(double));
+  f[0] = calloc(Ndim*Nbody,sizeof(double));
+  pos[0] = calloc(Ndim*Nbody,sizeof(double));
+  velo[0] = calloc(Ndim*Nbody,sizeof(double));
+  for(i=1;i<Ndim;i++){
+    f[i] = f[0] + i * Nbody;
+    pos[i] = pos[0] + i * Nbody;
+    velo[i] = velo[0] + i * Nbody;
+  }
 
 /* read the initial data from a file */
 
@@ -112,4 +112,3 @@ double second()
         i = gettimeofday(&tp,&tzp);
         return ( (double) tp.tv_sec + (double) tp.tv_usec * 1.e-6 );
 }
-

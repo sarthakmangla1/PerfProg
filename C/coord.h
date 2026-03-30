@@ -10,8 +10,6 @@
  *  f		  Forces acting on each particle
  *  vis           Viscosity coefficient for each particle
  *  mass	  Mass of each particle
- *  delta_pos     Separation vector for each particle pair
- *  delta_r	  Separation for each particle pair
  */
 
 #ifdef DECL
